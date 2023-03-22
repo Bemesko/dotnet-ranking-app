@@ -24,6 +24,7 @@ public class ItemController : ControllerBase
     public ItemModel[] Get(int itemType)
     {
         ItemModel[] items = Items.Where(i => i.ItemType == itemType).ToArray();
+        System.Threading.Thread.Sleep(2000);
         return items;
     }
 }

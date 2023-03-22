@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from 'react';
 
-const RankItems = () => {
+export const RankItems = () => {
     const [items, setItems] = useState([]);
     // Type 1 = Movies, 2 = Albums
     const dataType = 1;
@@ -19,7 +19,7 @@ const RankItems = () => {
     return(
         <main>
             {
-                (items != null) ? items.map((item) => <h3>{item.title}</h3>) : <div>Loading...</div>
+                (items.length > 0) ? items.map((item) => <h3>{item.title}</h3>) : <div>Loading...</div>
             }
             <div>
 
