@@ -24,7 +24,10 @@ public class ItemController : ControllerBase
     public ItemModel[] Get(int itemType)
     {
         ItemModel[] items = Items.Where(i => i.ItemType == itemType).ToArray();
-        System.Threading.Thread.Sleep(2000);
+
+        // This introduced an artificial delay that helped implementing the loading text
+        // System.Threading.Thread.Sleep(2000);
+
         return items;
     }
 }
