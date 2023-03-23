@@ -7,10 +7,26 @@ const RankingGrid = ({ items, imageArray }) => {
   const cellCollectionHalfBottom = [];
   const cellCollectionBottom = [];
 
+  function pushCellMarkupToArray(cellCollection, rankingNumber, rowLabel) {
+    if (rankingNumber <= 0) {
+      cellCollection.push(
+        <div className="row-label">
+          <h4>{rowLabel}</h4>
+        </div>
+      );
+    }
+
+    let item = items.find((o) => o.ranking === rankingNumber);
+
+    cellCollection.push(
+      <div id={`rank-${rankingNumber}`} className="rank-cell"></div>
+    );
+  }
+
   function createCellsForRow(rowNumber) {
     let rankingNumber = 0;
     let currentCollection = [];
-    let label = "";
+    let rowLabel = "";
     const cellNumber = 5;
 
     for (let i = 1; i <= cellNumber; i++) {
@@ -20,25 +36,25 @@ const RankingGrid = ({ items, imageArray }) => {
     switch (rowNumber) {
       case 1:
         currentCollection = cellCollectionTop;
-        label = "Top Tier";
+        rowLabel = "Top Tier";
         break;
       case 2:
         currentCollection = cellCollectionHalfTop;
-        label = "Half Top Tier";
+        rowLabel = "Half Top Tier";
         break;
       case 3:
         currentCollection = cellCollectionHalfBottom;
-        label = "Half Bottom Tier";
+        rowLabel = "Half Bottom Tier";
         break;
       case 4:
         currentCollection = cellCollectionBottom;
-        label = "Bottom Tier";
+        rowLabel = "Bottom Tier";
         break;
       default:
         break;
     }
 
-    pushCellMarkupToArray(currentCollection, rankingNumber, label);
+    pushCellMarkupToArray(currentCollection, rankingNumber, rowLabel);
   }
 
   function calculateRankingNumber(currentCell, cellNumber, rowNumber) {
