@@ -7,6 +7,27 @@ export const RankItems = () => {
   // Type 1 = Movies, 2 = Albums
   const dataType = 1;
 
+  function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
+  }
+
+  function allowDrop(event) {
+    event.preventDefault();
+  }
+
+  function drop(event) {
+    allowDrop();
+    const targetElement = event.target;
+
+    if (targetElement.nodeName === "IMG") {
+      return false;
+    }
+
+    if (targetElement.childNodes.length === 0) {
+      var data = parseInt(event.dataTransfer.getData());
+    }
+  }
+
   useEffect(() => {
     // Makes an HTTP GET to the backend
     fetch(`item/${dataType}`)

@@ -15,6 +15,12 @@ code {
   color: #E01A76;
 }
 
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
