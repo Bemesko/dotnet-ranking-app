@@ -19,7 +19,9 @@ const RankingGrid = ({ items, imageArray }) => {
     let item = items.find((o) => o.ranking === rankingNumber);
 
     cellCollection.push(
-      <div id={`rank-${rankingNumber}`} className="rank-cell"></div>
+      <div id={`rank-${rankingNumber}`} className="rank-cell">
+        {item}
+      </div>
     );
   }
 
