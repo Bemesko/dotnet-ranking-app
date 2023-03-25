@@ -2,11 +2,16 @@
 
 This is another project made by following .NET tutorials in order for me to get more familiar with the development side of .NET applications. This is already the third project and the challenge for this one is to integrate a .NET backend with a React frontend, making it my first time writing separate backend/frontend code. Curious to see how this goes.
 
+This project is based in this FreeCodeCamp tutorial: https://www.youtube.com/watch?v=4RKuyp_bOhY
+
+  *Currently this project is on hold because I didn't like the code that was being written in the tutorial. I'll challenge myself sometime later to resume this and try to implement the rest of the features on my own.*
+
 As always, tutorial notes can be seen in [the tutorial notes section](#tutorial-notes).
 
 ---
 
 ## Tutorial Notes
+**Link:** https://www.youtube.com/watch?v=4RKuyp_bOhY
 - NPM sometimes doesn't figure itself out when using IPv6, had to disable it to run `npm install` and enable it again. Probably something messy in my PC's configuration.
 - Both the backend and the frontend applications, since they run separately, have their own routes.
   - .NET backend routes are defined by the Controllers
@@ -20,3 +25,5 @@ const context = [
 ];
 ```
 - .NET debugging also works out of the box, which surprised me
+
+Tutorial checkpoint: 54:12
